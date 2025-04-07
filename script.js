@@ -45,12 +45,16 @@ else {
 
 //5
 
-let name = " Jungkook";
+let name = "Jungkook";
 let email = "jeon.jungkook@gmail.com";
 let password = 123456756;
-let nameValid = name.lenght >= 3 ;
-let emailValid = email.includes("@") && email.includes (".") && email.indexOf( "@") && email.lastIndexOf(".");
-let passwordValid = password.lenght >= 6;
+
+let nameValid = name.trim().length >= 3;
+let dIndex = email.indexOf("@");
+let pIndex = email.lastIndexOf(".")
+let emailValid = dIndex > 0 && pIndex > dIndex + 1 && pIndex < email.length - 1;
+let passwordValid = password.toString().length >= 6; 
+
 
 if ( nameValid && emailValid && passwordValid ) {
     console.log( "Перенаправлення на іншу сторінку");
